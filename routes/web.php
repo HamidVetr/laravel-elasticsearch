@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/ItemSearch', 'ItemSearchController@index');
+Route::post('/ItemSearchCreate', 'ItemSearchController@create');
