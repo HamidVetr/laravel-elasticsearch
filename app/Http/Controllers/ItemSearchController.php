@@ -16,9 +16,13 @@ class ItemSearchController extends Controller
     public function index(Request $request)
     {
         if($request->has('search')){
+//            dd($request->all());
             $items = Item::search($request->input('search'))->get();
+//            dd($items);
+            return view('ItemSearch',compact('items'));
         }
-        return view('ItemSearch',compact('items'));
+//        dd($items);
+        return view('ItemSearch');
     }
 
     /**

@@ -66,4 +66,19 @@ return [
         ],
     ],
 
+//    'tntsearch' => [
+//        'storage'  => storage_path(),
+//    ],
+
+    'tntsearch' => [
+        'storage'  => storage_path(), //place where the index files will be stored
+        'fuzziness' => env('TNTSEARCH_FUZZINESS', true),
+        'fuzzy' => [
+            'prefix_length' => 2,
+            'max_expansions' => 50,
+            'distance' => 2
+        ],
+        'asYouType' => false,
+    ],
+
 ];
